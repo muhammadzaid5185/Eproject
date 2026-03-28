@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickCalligraphy - Master</title>
+     <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-------------------------------------------- Navbar --------------------------------------------------------->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+<div class="container">
+<a class="navbar-brand" href="index .html">
+<i class="fas fa-feather-alt me-2"></i>QuickCalligraphy</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon">
+<span></span>
+</span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item">
+<a class="nav-link" href="index .html">Home</a></li>
+<li class="nav-item">
+<a class="nav-link" href="about.html" >About-us</a></li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown">Categories</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="arabic_call.html">Arabic Calligraphy</a></li>
+<li><a class="dropdown-item" href="indic_call.html">Indic Calligraphy</a></li>
+<li><a class="dropdown-item" href="greek_call.html">Greek Calligraphy</a></li>
+</ul></li>
+<li class="nav-item">
+<a class="nav-link" href="gallery.html">Gallery</a></li>
+<li class="nav-item">
+<a class="nav-link" href="contact.html">Contact</a></li>
+<li class="nav-item">
+<a class="nav-link" href="feedback.html">Feedback</a></li>
+</ul>
+  </div>
+</div>
+   </nav>
+
+<!-------------------------------------------- Navbarend --------------------------------------------------------->
+
+<!-- Feedback Preview -->
+
+<div class="feedback-container" style="margin-top: 10em;">
+<h2 class="section-title" style="color: #8b4513;">Share <span class="accent" style="font-family: 'Playfair Display', serif;" >Your</span> Thoughts</h2>
+<div class="divider"></div>
+<p class="section-desc" style="margin-bottom:40px">Help us improve QuickCalligraphy. Your insights shape our content and community.</p>
+<form id="feedbackForm" onsubmit="submitFeedback(event)" novalidate>
+<div class="form-row">
+<div class="form-group">
+<label for="fb-name">Full Name *</label>
+<input type="text" id="fb-name" placeholder="Your name" autocomplete="name">
+<div class="err-msg" id="err-name">Please enter your name.</div>
+</div>
+<div class="form-group">
+<label for="fb-email">Email Address *</label>
+<input type="email" id="fb-email" placeholder="your@email.com" autocomplete="email">
+<div class="err-msg" id="err-email">Please enter a valid email.</div>
+</div>
+   </div>
+<div class="form-group">
+<label for="fb-level">Experience Level</label>
+<select id="fb-level">
+<option value="">Select your level</option>
+<option>Complete Beginner</option>
+<option>Some Experience</option>
+<option>Intermediate</option>
+<option>Advanced / Professional</option>
+</select>
+    </div>
+<div class="form-group">
+<label>Overall Rating *</label>
+<div class="star-rating" id="starRating">
+<span class="star" onclick="setRating(1)" data-tooltip="Poor">★</span>
+<span class="star" onclick="setRating(2)" data-tooltip="Fair">★</span>
+<span class="star" onclick="setRating(3)" data-tooltip="Good">★</span>
+<span class="star" onclick="setRating(4)" data-tooltip="Very Good">★</span>
+<span class="star" onclick="setRating(5)" data-tooltip="Excellent">★</span>
+</div>
+<div class="err-msg" id="err-rating">Please select a rating.</div>
+</div>
+<div class="form-group">
+<div class="form-group">
+<label for="fb-msg">Your Message *</label>
+<textarea id="fb-msg" placeholder="Share your experience, suggestions, or kind words..."></textarea>
+<div class="err-msg" id="err-msg">Please enter your message (minimum 20 characters).</div>
+</div>
+<button type="submit" class="btn-feed"> Submit Feedback</button>
+</form>
+   </div>
+
+<!-- Footer -->
+
+<footer class="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4 mb-4">
+<h5 class="mb-4">QuickCalligraphy</h5><p>Dedicated to preserving and teaching the beautiful art of calligraphy to enthusiasts worldwide.</p>
+<div class="social-links">
+<a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+<a href="http://x.com/"><i class="fab fa-x"></i></a>
+<a href="https://www.instagram.com/?hl=en"><i class="fab fa-instagram"></i></a>
+<a href="https://www.pinterest.com/"><i class="fab fa-pinterest"></i></a>
+</div>
+   </div>
+<div class="col-md-4 mb-4">
+<h5 class="mb-4">Quick Links</h5>
+<ul class="list-unstyled">
+<li class="mb-2"><a href="about.html" class="text-light text-decoration-none">About Us</a></li>
+<li class="mb-2"><a href="gallery.html" class="text-light text-decoration-none">Gallery</a></li>
+<li class="mb-2"><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+<li class="mb-2"><a href="feedback.html" class="text-light text-decoration-none">Feedback</a></li>
+</ul>
+  </div>      
+<div class="col-md-4 mb-4">
+<h5 class="mb-4">Newsletter</h5><p>Subscribe for tips, tutorials, and updates</p>
+<div class="input-group">
+<input type="email" class="form-control" placeholder="Your Email">
+<button class="btn btn-custom" type="button">Subscribe</button>
+</div>
+   </div>
+</div>
+<hr class="mt-4" style="background-color: rgba(255,255,255,0.1);">
+<div class="row mt-4">
+<div class="col-md-6"><p class="mb-0">&copy; 2026 QuickCalligraphy. All rights reserved.</p>
+</div>
+<div class="col-md-6 text-md-end">
+<p class="mb-0">Made with <i class="fas fa-heart text-danger"></i> for calligraphy lovers</p>
+</div>
+   </div>
+</div>
+</footer>
+
+<!-- Back to Top Button -->
+
+<div class="back-to-top" id="backToTop">
+<i class="fas fa-arrow-up"></i>
+</div>
+
+<!-- Separate Page HTML (Gallery Page) -->
+<!-- This would be in gallery.html -->
+<div style="display: none;" id="gallery-page-template">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - QuickCalligraphy</title>
+    <!-- Same CSS and Bootstrap links as main page -->
+</head>
+<body>
+<!-- Same navbar -->
+<div class="container py-5 mt-5">
+<h1 class="text-center mb-5">Calligraphy Gallery</h1>
+<div class="row g-4">
+
+<!-- Gallery items with lightbox -->
+
+</div>
+   </div>
+
+<!-- Same footer -->
+
+</body>
+</html>
+    </div>
+
+<!-- Scripts -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
